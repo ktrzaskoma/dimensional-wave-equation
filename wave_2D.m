@@ -44,7 +44,7 @@ while(t < T)
     wn=wnp1; 
 
     % Source 
-    wn(50, 50) = dt^2*20*sin(30*pi*t/20);
+    wn(70, 70) = dt^2*20*sin(30*pi*t/20);
     for i = 2:nx-1
         for j = 2:ny-1
             wnp1(i,j) = 2*wn(i,j) - wnm1(i,j) + CFL^2 *(wn(i+1,j) +wn(i,j+1) - 4*wn(i,j) + wn(i-1,j) + wn(i,j-1));

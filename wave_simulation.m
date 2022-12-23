@@ -22,7 +22,7 @@ function varargout = wave_simulation(varargin)
 
 % Edit the above text to modify the response to help wave_simulation
 
-% Last Modified by GUIDE v2.5 23-Dec-2022 00:18:41
+% Last Modified by GUIDE v2.5 23-Dec-2022 09:24:28
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -644,7 +644,7 @@ while(t < T)
     line([6,6], [4,6], 'Color', 'r');
     end
     title(handles.axe, sprintf('t=%.2f', t*c*(1/CFL)))
-    pause(0.005);     
+    pause(0.09);     
 end
 
 

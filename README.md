@@ -7,6 +7,7 @@ Examples that inspired us
  
  ## TODO
  ❌ slider button to changing duration of pause 
+ 
  ❌ button to close simulation
  
  

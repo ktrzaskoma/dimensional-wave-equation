@@ -441,15 +441,6 @@ end
 
 %% --- Executes on button press in SimButton.
 function SimButton_Callback(~, ~, handles)
-Lx = 10;
-Ly = 10;
-dx = 0.1;
-dy = dx;
-nx = fix(Lx/dx);
-ny = fix(Ly/dy);
-
-x = linspace(0, Lx, nx);
-y = linspace(0, Ly, ny);
 
 % solution: values useful for wave equation
 
@@ -490,6 +481,16 @@ min = str2double(minValue{minIndex});
 
 %% equation
 
+Lx = 10;
+Ly = 10;
+dx = 0.1;
+dy = dx;
+nx = fix(Lx/dx);
+ny = fix(Ly/dy);
+
+x = linspace(0, Lx, nx);
+y = linspace(0, Ly, ny);
+
 wn = zeros(nx, ny);
 wnm1 = wn;
 wnp1 = wn;
@@ -514,6 +515,7 @@ while(t < T)
     
 %     wn(:,[1 end]) = 0;
 %     wn([1 end],:) = 0;
+
     t = t + dt;
 
     %Save current and previous arrays

@@ -22,7 +22,7 @@ function varargout = wave_simulation(varargin)
 
 % Edit the above text to modify the response to help wave_simulation
 
-% Last Modified by GUIDE v2.5 23-Dec-2022 09:24:28
+% Last Modified by GUIDE v2.5 24-Dec-2022 11:46:49
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -73,7 +73,7 @@ function SourcesMenu_Callback(~, ~, handles)
 %% function to set position of sources
 sources = handles.SourcesMenu.String;
 sourcesIndex = handles.SourcesMenu.Value;
-numberOfSources = str2double(sources{sourcesIndex});
+sourcesQuantity = str2double(sources{sourcesIndex});
 
 %% function to set position of obstacles
 obstacles = handles.ObstaclesMenu.String;
@@ -82,25 +82,25 @@ typeOfObstacle = obstacles{obstaclesIndex};
 
 if(strcmp(typeOfObstacle,'Without obstacles'))
     cla
-    if(numberOfSources==1)
+    if(sourcesQuantity==1)
     plot(handles.axe, 5, 7.5, 'k.', 'MarkerSize', 15);
     end
-    if(numberOfSources==2)
-    plot(handles.axe, 7.5, 7.5, 'k.', 'MarkerSize', 15);
-    plot(handles.axe, 2.5, 2.5, 'k.', 'MarkerSize', 15);
+    if(sourcesQuantity==2)
+    plot(handles.axe, 5, 7.5, 'k.', 'MarkerSize', 15);
+    plot(handles.axe, 5, 2.5, 'k.', 'MarkerSize', 15);
     end
-    if(numberOfSources==3)
+    if(sourcesQuantity==3)
     plot(handles.axe, 7.5, 2.5, 'k.', 'MarkerSize', 15);
     plot(handles.axe, 2.5, 2.5, 'k.', 'MarkerSize', 15);
     plot(handles.axe, 5, 8, 'k.', 'MarkerSize', 15);
     end
-    if(numberOfSources==4)
+    if(sourcesQuantity==4)
     plot(handles.axe, 7.5, 7.5, 'k.', 'MarkerSize', 15);
     plot(handles.axe, 2.5, 2.5, 'k.', 'MarkerSize', 15);
     plot(handles.axe, 7.5, 2.5, 'k.', 'MarkerSize', 15);
     plot(handles.axe, 2.5, 7.5, 'k.', 'MarkerSize', 15);
     end
-    if(numberOfSources==5)
+    if(sourcesQuantity==5)
     plot(handles.axe, 2, 6, 'k.', 'MarkerSize', 15);
     plot(handles.axe, 5, 8.5, 'k.', 'MarkerSize', 15);
     plot(handles.axe, 8, 6, 'k.', 'MarkerSize', 15);
@@ -110,25 +110,25 @@ if(strcmp(typeOfObstacle,'Without obstacles'))
 end
 if(strcmp(typeOfObstacle,'Wall'))
     cla
-    if(numberOfSources==1)
+    if(sourcesQuantity==1)
     plot(handles.axe, 5, 7.5, 'k.', 'MarkerSize', 15);
     end
-    if(numberOfSources==2)
-    plot(handles.axe, 7.5, 7.5, 'k.', 'MarkerSize', 15);
-    plot(handles.axe, 2.5, 2.5, 'k.', 'MarkerSize', 15);
+    if(sourcesQuantity==2)
+    plot(handles.axe, 5, 7.5, 'k.', 'MarkerSize', 15);
+    plot(handles.axe, 5, 2.5, 'k.', 'MarkerSize', 15);
     end
-    if(numberOfSources==3)
+    if(sourcesQuantity==3)
     plot(handles.axe, 7.5, 2.5, 'k.', 'MarkerSize', 15);
     plot(handles.axe, 2.5, 2.5, 'k.', 'MarkerSize', 15);
     plot(handles.axe, 5, 8, 'k.', 'MarkerSize', 15);
     end
-    if(numberOfSources==4)
+    if(sourcesQuantity==4)
     plot(handles.axe, 7.5, 7.5, 'k.', 'MarkerSize', 15);
     plot(handles.axe, 2.5, 2.5, 'k.', 'MarkerSize', 15);
     plot(handles.axe, 7.5, 2.5, 'k.', 'MarkerSize', 15);
     plot(handles.axe, 2.5, 7.5, 'k.', 'MarkerSize', 15);
     end
-    if(numberOfSources==5)
+    if(sourcesQuantity==5)
     plot(handles.axe, 2, 6, 'k.', 'MarkerSize', 15);
     plot(handles.axe, 5, 8.5, 'k.', 'MarkerSize', 15);
     plot(handles.axe, 8, 6, 'k.', 'MarkerSize', 15);
@@ -141,22 +141,22 @@ end
 
 if(strcmp(typeOfObstacle,'Circle'))
     cla
-    if(numberOfSources==1)
+    if(sourcesQuantity==1)
     plot(handles.axe,5, 7.5, 'k.', 'MarkerSize', 15);
     hold on
     th = 0:pi/100:2*pi;
     f = 1.5 * exp(1i*th) + 7+1i*5;
     plot(real(f), imag(f));
     end
-    if(numberOfSources==2)
-    plot(handles.axe, 7.5, 7.5, 'k.', 'MarkerSize', 15);
-    plot(handles.axe, 2.5, 2.5, 'k.', 'MarkerSize', 15);
+    if(sourcesQuantity==2)
+    plot(handles.axe, 5, 7.5, 'k.', 'MarkerSize', 15);
+    plot(handles.axe, 5, 2.5, 'k.', 'MarkerSize', 15);
     hold on
     th = 0:pi/100:2*pi;
     f = 1.5 * exp(1i*th) + 5+1i*5;
     plot(real(f), imag(f));
     end
-    if(numberOfSources==3)
+    if(sourcesQuantity==3)
     plot(handles.axe, 7.5, 2.5, 'k.', 'MarkerSize', 15);
     plot(handles.axe, 2.5, 2.5, 'k.', 'MarkerSize', 15);
     plot(handles.axe, 5, 8, 'k.', 'MarkerSize', 15);
@@ -165,7 +165,7 @@ if(strcmp(typeOfObstacle,'Circle'))
     f = 1.5 * exp(1i*th) + 5+1i*5;
     plot(real(f), imag(f));
     end
-    if(numberOfSources==4)
+    if(sourcesQuantity==4)
     plot(handles.axe, 7.5, 7.5, 'k.', 'MarkerSize', 15);
     plot(handles.axe, 2.5, 2.5, 'k.', 'MarkerSize', 15);
     plot(handles.axe, 7.5, 2.5, 'k.', 'MarkerSize', 15);
@@ -175,7 +175,7 @@ if(strcmp(typeOfObstacle,'Circle'))
     f = 1.5 * exp(1i*th) + 5+1i*5;
     plot(real(f), imag(f));
     end
-    if(numberOfSources==5)
+    if(sourcesQuantity==5)
     plot(handles.axe, 2, 6, 'k.', 'MarkerSize', 15);
     plot(handles.axe, 5, 8.5, 'k.', 'MarkerSize', 15);
     plot(handles.axe, 8, 6, 'k.', 'MarkerSize', 15);
@@ -190,7 +190,7 @@ end
 
 if(strcmp(typeOfObstacle,'Box'))
     cla
-    if(numberOfSources==1)
+    if(sourcesQuantity==1)
     plot(handles.axe, 5, 7.5, 'k.', 'MarkerSize', 15);
     hold on
     line([4,6], [6,6], 'Color', 'r');
@@ -198,16 +198,16 @@ if(strcmp(typeOfObstacle,'Box'))
     line([4,4], [4,6], 'Color', 'r');
     line([6,6], [4,6], 'Color', 'r');
     end
-    if(numberOfSources==2)
-    plot(handles.axe, 7.5, 7.5, 'k.', 'MarkerSize', 15);
-    plot(handles.axe, 2.5, 2.5, 'k.', 'MarkerSize', 15);
+    if(sourcesQuantity==2)
+    plot(handles.axe, 5, 7.5, 'k.', 'MarkerSize', 15);
+    plot(handles.axe, 5, 2.5, 'k.', 'MarkerSize', 15);
     hold on
     line([4,6], [6,6], 'Color', 'r');
     line([4,6], [4,4], 'Color', 'r');
     line([4,4], [4,6], 'Color', 'r');
     line([6,6], [4,6], 'Color', 'r');
     end
-    if(numberOfSources==3)
+    if(sourcesQuantity==3)
     plot(handles.axe,7.5, 2.5, 'k.', 'MarkerSize', 15);
     plot(handles.axe,2.5, 2.5, 'k.', 'MarkerSize', 15);
     plot(handles.axe,5, 8, 'k.', 'MarkerSize', 15);
@@ -217,7 +217,7 @@ if(strcmp(typeOfObstacle,'Box'))
     line([4,4], [4,6], 'Color', 'r');
     line([6,6], [4,6], 'Color', 'r');
     end
-    if(numberOfSources==4)
+    if(sourcesQuantity==4)
     plot(handles.axe, 7.5, 7.5, 'k.', 'MarkerSize', 15);
     plot(handles.axe, 2.5, 2.5, 'k.', 'MarkerSize', 15);
     plot(handles.axe, 7.5, 2.5, 'k.', 'MarkerSize', 15);
@@ -228,7 +228,7 @@ if(strcmp(typeOfObstacle,'Box'))
     line([4,4], [4,6], 'Color', 'r');
     line([6,6], [4,6], 'Color', 'r');
     end
-    if(numberOfSources==5)
+    if(sourcesQuantity==5)
     plot(handles.axe, 2, 6, 'k.', 'MarkerSize', 15);
     plot(handles.axe, 5, 8.5, 'k.', 'MarkerSize', 15);
     plot(handles.axe, 8, 6, 'k.', 'MarkerSize', 15);
@@ -256,7 +256,7 @@ function ObstaclesMenu_Callback(~, ~, handles)
 %% function to set position of sources
 sources = handles.SourcesMenu.String;
 sourcesIndex = handles.SourcesMenu.Value;
-numberOfSources = str2double(sources{sourcesIndex});
+sourcesQuantity = str2double(sources{sourcesIndex});
 
 %% function to set position of obstacles
 obstacles = handles.ObstaclesMenu.String;
@@ -265,25 +265,25 @@ typeOfObstacle = obstacles{obstaclesIndex};
 
 if(strcmp(typeOfObstacle,'Without obstacles'))
     cla
-    if(numberOfSources==1)
+    if(sourcesQuantity==1)
     plot(handles.axe, 5, 7.5, 'k.', 'MarkerSize', 15);
     end
-    if(numberOfSources==2)
-    plot(handles.axe, 7.5, 7.5, 'k.', 'MarkerSize', 15);
-    plot(handles.axe, 2.5, 2.5, 'k.', 'MarkerSize', 15);
+    if(sourcesQuantity==2)
+    plot(handles.axe, 5, 7.5, 'k.', 'MarkerSize', 15);
+    plot(handles.axe, 5, 2.5, 'k.', 'MarkerSize', 15);
     end
-    if(numberOfSources==3)
+    if(sourcesQuantity==3)
     plot(handles.axe, 7.5, 2.5, 'k.', 'MarkerSize', 15);
     plot(handles.axe, 2.5, 2.5, 'k.', 'MarkerSize', 15);
     plot(handles.axe, 5, 8, 'k.', 'MarkerSize', 15);
     end
-    if(numberOfSources==4)
+    if(sourcesQuantity==4)
     plot(handles.axe, 7.5, 7.5, 'k.', 'MarkerSize', 15);
     plot(handles.axe, 2.5, 2.5, 'k.', 'MarkerSize', 15);
     plot(handles.axe, 7.5, 2.5, 'k.', 'MarkerSize', 15);
     plot(handles.axe, 2.5, 7.5, 'k.', 'MarkerSize', 15);
     end
-    if(numberOfSources==5)
+    if(sourcesQuantity==5)
     plot(handles.axe, 2, 6, 'k.', 'MarkerSize', 15);
     plot(handles.axe, 5, 8.5, 'k.', 'MarkerSize', 15);
     plot(handles.axe, 8, 6, 'k.', 'MarkerSize', 15);
@@ -293,25 +293,25 @@ if(strcmp(typeOfObstacle,'Without obstacles'))
 end
 if(strcmp(typeOfObstacle,'Wall'))
     cla
-    if(numberOfSources==1)
+    if(sourcesQuantity==1)
     plot(handles.axe, 5, 7.5, 'k.', 'MarkerSize', 15);
     end
-    if(numberOfSources==2)
-    plot(handles.axe, 7.5, 7.5, 'k.', 'MarkerSize', 15);
-    plot(handles.axe, 2.5, 2.5, 'k.', 'MarkerSize', 15);
+    if(sourcesQuantity==2)
+    plot(handles.axe, 5, 7.5, 'k.', 'MarkerSize', 15);
+    plot(handles.axe, 5, 2.5, 'k.', 'MarkerSize', 15);
     end
-    if(numberOfSources==3)
+    if(sourcesQuantity==3)
     plot(handles.axe, 7.5, 2.5, 'k.', 'MarkerSize', 15);
     plot(handles.axe, 2.5, 2.5, 'k.', 'MarkerSize', 15);
     plot(handles.axe, 5, 8, 'k.', 'MarkerSize', 15);
     end
-    if(numberOfSources==4)
+    if(sourcesQuantity==4)
     plot(handles.axe, 7.5, 7.5, 'k.', 'MarkerSize', 15);
     plot(handles.axe, 2.5, 2.5, 'k.', 'MarkerSize', 15);
     plot(handles.axe, 7.5, 2.5, 'k.', 'MarkerSize', 15);
     plot(handles.axe, 2.5, 7.5, 'k.', 'MarkerSize', 15);
     end
-    if(numberOfSources==5)
+    if(sourcesQuantity==5)
     plot(handles.axe, 2, 6, 'k.', 'MarkerSize', 15);
     plot(handles.axe, 5, 8.5, 'k.', 'MarkerSize', 15);
     plot(handles.axe, 8, 6, 'k.', 'MarkerSize', 15);
@@ -324,22 +324,22 @@ end
 
 if(strcmp(typeOfObstacle,'Circle'))
     cla
-    if(numberOfSources==1)
+    if(sourcesQuantity==1)
     plot(handles.axe,5, 7.5, 'k.', 'MarkerSize', 15);
     hold on
     th = 0:pi/100:2*pi;
     f = 1.5 * exp(1i*th) + 7+1i*5;
     plot(real(f), imag(f));
     end
-    if(numberOfSources==2)
-    plot(handles.axe, 7.5, 7.5, 'k.', 'MarkerSize', 15);
-    plot(handles.axe, 2.5, 2.5, 'k.', 'MarkerSize', 15);
+    if(sourcesQuantity==2)
+    plot(handles.axe, 5, 7.5, 'k.', 'MarkerSize', 15);
+    plot(handles.axe, 5, 2.5, 'k.', 'MarkerSize', 15);
     hold on
     th = 0:pi/100:2*pi;
     f = 1.5 * exp(1i*th) + 5+1i*5;
     plot(real(f), imag(f));
     end
-    if(numberOfSources==3)
+    if(sourcesQuantity==3)
     plot(handles.axe, 7.5, 2.5, 'k.', 'MarkerSize', 15);
     plot(handles.axe, 2.5, 2.5, 'k.', 'MarkerSize', 15);
     plot(handles.axe, 5, 8, 'k.', 'MarkerSize', 15);
@@ -348,7 +348,7 @@ if(strcmp(typeOfObstacle,'Circle'))
     f = 1.5 * exp(1i*th) + 5+1i*5;
     plot(real(f), imag(f));
     end
-    if(numberOfSources==4)
+    if(sourcesQuantity==4)
     plot(handles.axe, 7.5, 7.5, 'k.', 'MarkerSize', 15);
     plot(handles.axe, 2.5, 2.5, 'k.', 'MarkerSize', 15);
     plot(handles.axe, 7.5, 2.5, 'k.', 'MarkerSize', 15);
@@ -358,7 +358,7 @@ if(strcmp(typeOfObstacle,'Circle'))
     f = 1.5 * exp(1i*th) + 5+1i*5;
     plot(real(f), imag(f));
     end
-    if(numberOfSources==5)
+    if(sourcesQuantity==5)
     plot(handles.axe, 2, 6, 'k.', 'MarkerSize', 15);
     plot(handles.axe, 5, 8.5, 'k.', 'MarkerSize', 15);
     plot(handles.axe, 8, 6, 'k.', 'MarkerSize', 15);
@@ -373,7 +373,7 @@ end
 
 if(strcmp(typeOfObstacle,'Box'))
     cla
-    if(numberOfSources==1)
+    if(sourcesQuantity==1)
     plot(handles.axe, 5, 7.5, 'k.', 'MarkerSize', 15);
     hold on
     line([4,6], [6,6], 'Color', 'r');
@@ -381,16 +381,16 @@ if(strcmp(typeOfObstacle,'Box'))
     line([4,4], [4,6], 'Color', 'r');
     line([6,6], [4,6], 'Color', 'r');
     end
-    if(numberOfSources==2)
-    plot(handles.axe, 7.5, 7.5, 'k.', 'MarkerSize', 15);
-    plot(handles.axe, 2.5, 2.5, 'k.', 'MarkerSize', 15);
+    if(sourcesQuantity==2)
+    plot(handles.axe, 5, 7.5, 'k.', 'MarkerSize', 15);
+    plot(handles.axe, 5, 2.5, 'k.', 'MarkerSize', 15);
     hold on
     line([4,6], [6,6], 'Color', 'r');
     line([4,6], [4,4], 'Color', 'r');
     line([4,4], [4,6], 'Color', 'r');
     line([6,6], [4,6], 'Color', 'r');
     end
-    if(numberOfSources==3)
+    if(sourcesQuantity==3)
     plot(handles.axe,7.5, 2.5, 'k.', 'MarkerSize', 15);
     plot(handles.axe,2.5, 2.5, 'k.', 'MarkerSize', 15);
     plot(handles.axe,5, 8, 'k.', 'MarkerSize', 15);
@@ -400,7 +400,7 @@ if(strcmp(typeOfObstacle,'Box'))
     line([4,4], [4,6], 'Color', 'r');
     line([6,6], [4,6], 'Color', 'r');
     end
-    if(numberOfSources==4)
+    if(sourcesQuantity==4)
     plot(handles.axe, 7.5, 7.5, 'k.', 'MarkerSize', 15);
     plot(handles.axe, 2.5, 2.5, 'k.', 'MarkerSize', 15);
     plot(handles.axe, 7.5, 2.5, 'k.', 'MarkerSize', 15);
@@ -411,7 +411,7 @@ if(strcmp(typeOfObstacle,'Box'))
     line([4,4], [4,6], 'Color', 'r');
     line([6,6], [4,6], 'Color', 'r');
     end
-    if(numberOfSources==5)
+    if(sourcesQuantity==5)
     plot(handles.axe, 2, 6, 'k.', 'MarkerSize', 15);
     plot(handles.axe, 5, 8.5, 'k.', 'MarkerSize', 15);
     plot(handles.axe, 8, 6, 'k.', 'MarkerSize', 15);
@@ -461,7 +461,7 @@ T = str2double(duration{durationIndex});
 %% sources
 sources = handles.SourcesMenu.String;
 sourcesIndex = handles.SourcesMenu.Value;
-numberOfSources = str2double(sources{sourcesIndex});
+sourcesQuantity = str2double(sources{sourcesIndex});
 
 %% obstacles
 obstacles = handles.ObstaclesMenu.String;
@@ -504,8 +504,16 @@ cla
 while(t < T)
     % Reflecting Boundary Conditions which we will implemented in our
     % simulation
-    wn(:,[1 end]) = 0;
-    wn([1 end],:) = 0;
+
+    %% Non reflecting walls 
+    wnp1(1,:) = wn(2,:) + ((CFL-1)/(CFL+1)) * (wnp1(2,:) - wn(1,:));
+    wnp1(end,:) = wn(end-1,:) + ((CFL-1)/(CFL+1)) * (wnp1(end-1,:) - wn(end,:));
+    wnp1(:,1) = wn(:,2) + ((CFL-1)/(CFL+1)) * (wnp1(:,2) - wn(:,1));
+    wnp1(:,end) = wn(:,end-1) + ((CFL-1)/(CFL+1)) * (wnp1(:,end-1) - wn(:,end));
+
+    
+%     wn(:,[1 end]) = 0;
+%     wn([1 end],:) = 0;
     t = t + dt;
 
     %Save current and previous arrays
@@ -513,25 +521,25 @@ while(t < T)
     wn=wnp1;
 
     % Setting places where wave will be generate
-    if(numberOfSources==1)
+    if(sourcesQuantity==1)
         wn(75, 50) = amp * sin(2 * freq * 2 * pi * t);
     end
-    if(numberOfSources==2)
-        wn(75, 75) = amp * sin(2 * freq * 2 * pi * t);
-        wn(25, 25) = amp * sin(2 * freq * 2 * pi * t);
+    if(sourcesQuantity==2)
+        wn(75, 50) = amp * sin(2 * freq * 2 * pi * t);
+        wn(25, 50) = amp * sin(2 * freq * 2 * pi * t);
     end
-    if(numberOfSources==3)
+    if(sourcesQuantity==3)
         wn(80, 50) = amp * sin(2 * freq * 2 * pi * t);
         wn(25, 25) = amp * sin(2 * freq * 2 * pi * t);
         wn(25, 75) = amp * sin(2 * freq * 2 * pi * t);
     end
-    if(numberOfSources==4)
+    if(sourcesQuantity==4)
         wn(75, 25) = amp * sin(2 * freq * 2 * pi * t);
         wn(75, 75) = amp * sin(2 * freq * 2 * pi * t);
         wn(25, 25) = amp * sin(2 * freq * 2 * pi * t);
         wn(25, 75) = amp * sin(2 * freq * 2 * pi * t);
     end
-    if(numberOfSources==5)
+    if(sourcesQuantity==5)
         wn(60, 20) = amp * sin(2 * freq * 2 * pi * t);
         wn(60, 80) = amp * sin(2 * freq * 2 * pi * t);
         wn(25, 35) = amp * sin(2 * freq * 2 * pi * t);
@@ -552,27 +560,27 @@ while(t < T)
     end
 
     if(strcmp(typeOfObstacle,'Circle'))
-        if(numberOfSources==1)
+        if(sourcesQuantity==1)
             r=15;
             center_y=70;
             center_x=50;
         end
-        if(numberOfSources==2)
+        if(sourcesQuantity==2)
             r=15;
             center_y=50;
             center_x=50;
         end
-        if(numberOfSources==3)
+        if(sourcesQuantity==3)
             r=15;
             center_y=50;
             center_x=50;
         end
-        if(numberOfSources==4)
+        if(sourcesQuantity==4)
             r=15;
             center_y=50;
             center_x=50;
         end
-        if(numberOfSources==5)
+        if(sourcesQuantity==5)
             r=15;
             center_y=50;
             center_x=50;
@@ -605,31 +613,31 @@ while(t < T)
     line([2,8], [5, 5], 'Color', 'r');
     end
     if(strcmp(typeOfObstacle,'Circle'))
-        if(numberOfSources==1)
+        if(sourcesQuantity==1)
         hold on
         th = 0:pi/100:2*pi;
         f = 1.5 * exp(1i*th) + 7+1i*5;
         plot(real(f), imag(f));
         end
-        if(numberOfSources==2)
+        if(sourcesQuantity==2)
         hold on
         th = 0:pi/100:2*pi;
         f = 1.5 * exp(1i*th) + 5+1i*5;
         plot(real(f), imag(f));
         end
-        if(numberOfSources==3)
+        if(sourcesQuantity==3)
         hold on
         th = 0:pi/100:2*pi;
         f = 1.5 * exp(1i*th) + 5+1i*5;
         plot(real(f), imag(f));
         end
-        if(numberOfSources==4)
+        if(sourcesQuantity==4)
         hold on
         th = 0:pi/100:2*pi;
         f = 1.5 * exp(1i*th) + 5+1i*5;
         plot(real(f), imag(f));
         end
-        if(numberOfSources==5)
+        if(sourcesQuantity==5)
         hold on
         th = 0:pi/100:2*pi;
         f = 1.5 * exp(1i*th) + 5+1i*5;
@@ -691,6 +699,3 @@ function MinimumMenu_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
-
-
-

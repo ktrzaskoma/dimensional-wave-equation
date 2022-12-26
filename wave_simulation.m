@@ -22,7 +22,7 @@ function varargout = wave_simulation(varargin)
 
 % Edit the above text to modify the response to help wave_simulation
 
-% Last Modified by GUIDE v2.5 26-Dec-2022 14:03:18
+% Last Modified by GUIDE v2.5 26-Dec-2022 17:40:12
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -479,6 +479,8 @@ minValue = handles.MinimumMenu.String;
 minIndex = handles.MinimumMenu.Value;
 min = str2double(minValue{minIndex});
 
+pauseVal = get(handles.PauseSlider, 'Value');
+
 %% equation
 
 Lx = 10;
@@ -654,7 +656,7 @@ while(t < T)
     line([6,6], [4,6], 'Color', 'r');
     end
     title(handles.axe, sprintf('t=%.2f', t*c*(1/CFL)))
-    pause(0.09);     
+    pause(pauseVal);     
 end
 
 
@@ -709,3 +711,25 @@ closereq();
 % hObject    handle to EndButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+
+
+% --- Executes on slider movement.
+function PauseSlider_Callback(hObject, eventdata, handles)
+% hObject    handle to PauseSlider (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'Value') returns position of slider
+%        get(hObject,'Min') and get(hObject,'Max') to determine range of slider
+
+
+% --- Executes during object creation, after setting all properties.
+function PauseSlider_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to PauseSlider (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: slider controls usually have a light gray background.
+if isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor',[.9 .9 .9]);
+end

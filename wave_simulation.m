@@ -145,7 +145,7 @@ if(strcmp(typeOfObstacle,'Circle'))
     plot(handles.axe,5, 7.5, 'k.', 'MarkerSize', 15);
     hold on
     th = 0:pi/100:2*pi;
-    f = 1.5 * exp(1i*th) + 7+1i*5;
+    f = 2 * exp(1i*th) + 7+1i*5;
     plot(real(f), imag(f));
     end
     if(sourcesQuantity==2)
@@ -153,7 +153,7 @@ if(strcmp(typeOfObstacle,'Circle'))
     plot(handles.axe, 5, 2.5, 'k.', 'MarkerSize', 15);
     hold on
     th = 0:pi/100:2*pi;
-    f = 1.5 * exp(1i*th) + 5+1i*5;
+    f = 2 * exp(1i*th) + 5+1i*5;
     plot(real(f), imag(f));
     end
     if(sourcesQuantity==3)
@@ -162,7 +162,7 @@ if(strcmp(typeOfObstacle,'Circle'))
     plot(handles.axe, 5, 8, 'k.', 'MarkerSize', 15);
     hold on
     th = 0:pi/100:2*pi;
-    f = 1.5 * exp(1i*th) + 5+1i*5;
+    f = 2 * exp(1i*th) + 5+1i*5;
     plot(real(f), imag(f));
     end
     if(sourcesQuantity==4)
@@ -172,7 +172,7 @@ if(strcmp(typeOfObstacle,'Circle'))
     plot(handles.axe, 2.5, 7.5, 'k.', 'MarkerSize', 15);
     hold on
     th = 0:pi/100:2*pi;
-    f = 1.5 * exp(1i*th) + 5+1i*5;
+    f = 2 * exp(1i*th) + 5+1i*5;
     plot(real(f), imag(f));
     end
     if(sourcesQuantity==5)
@@ -183,7 +183,7 @@ if(strcmp(typeOfObstacle,'Circle'))
     plot(handles.axe, 3.5, 2.5, 'k.', 'MarkerSize', 15);
     hold on
     th = 0:pi/100:2*pi;
-    f = 1.5 * exp(1i*th) + 5+1i*5;
+    f = 2 * exp(1i*th) + 5+1i*5;
     plot(real(f), imag(f));
     end
 end
@@ -193,6 +193,7 @@ if(strcmp(typeOfObstacle,'Box'))
     if(sourcesQuantity==1)
     plot(handles.axe, 5, 7.5, 'k.', 'MarkerSize', 15);
     hold on
+    
     line([4,6], [6,6], 'Color', 'r');
     line([4,6], [4,4], 'Color', 'r');
     line([4,4], [4,6], 'Color', 'r');
@@ -328,7 +329,7 @@ if(strcmp(typeOfObstacle,'Circle'))
     plot(handles.axe,5, 7.5, 'k.', 'MarkerSize', 15);
     hold on
     th = 0:pi/100:2*pi;
-    f = 1.5 * exp(1i*th) + 7+1i*5;
+    f = 2 * exp(1i*th) + 7+1i*5;
     plot(real(f), imag(f));
     end
     if(sourcesQuantity==2)
@@ -336,7 +337,7 @@ if(strcmp(typeOfObstacle,'Circle'))
     plot(handles.axe, 5, 2.5, 'k.', 'MarkerSize', 15);
     hold on
     th = 0:pi/100:2*pi;
-    f = 1.5 * exp(1i*th) + 5+1i*5;
+    f = 2 * exp(1i*th) + 5+1i*5;
     plot(real(f), imag(f));
     end
     if(sourcesQuantity==3)
@@ -345,7 +346,7 @@ if(strcmp(typeOfObstacle,'Circle'))
     plot(handles.axe, 5, 8, 'k.', 'MarkerSize', 15);
     hold on
     th = 0:pi/100:2*pi;
-    f = 1.5 * exp(1i*th) + 5+1i*5;
+    f = 2 * exp(1i*th) + 5+1i*5;
     plot(real(f), imag(f));
     end
     if(sourcesQuantity==4)
@@ -355,7 +356,7 @@ if(strcmp(typeOfObstacle,'Circle'))
     plot(handles.axe, 2.5, 7.5, 'k.', 'MarkerSize', 15);
     hold on
     th = 0:pi/100:2*pi;
-    f = 1.5 * exp(1i*th) + 5+1i*5;
+    f = 2 * exp(1i*th) + 5+1i*5;
     plot(real(f), imag(f));
     end
     if(sourcesQuantity==5)
@@ -366,7 +367,7 @@ if(strcmp(typeOfObstacle,'Circle'))
     plot(handles.axe, 3.5, 2.5, 'k.', 'MarkerSize', 15);
     hold on
     th = 0:pi/100:2*pi;
-    f = 1.5 * exp(1i*th) + 5+1i*5;
+    f = 2 * exp(1i*th) + 5+1i*5;
     plot(real(f), imag(f));
     end
 end
@@ -565,27 +566,27 @@ while(t < T)
 
     if(strcmp(typeOfObstacle,'Circle'))
         if(sourcesQuantity==1)
-            r=15;
+            r=20;
             center_y=70;
             center_x=50;
         end
         if(sourcesQuantity==2)
-            r=15;
+            r=20;
             center_y=50;
             center_x=50;
         end
         if(sourcesQuantity==3)
-            r=15;
+            r=20;
             center_y=50;
             center_x=50;
         end
         if(sourcesQuantity==4)
-            r=15;
+            r=20;
             center_y=50;
             center_x=50;
         end
         if(sourcesQuantity==5)
-            r=15;
+            r=20;
             center_y=50;
             center_x=50;
         end
@@ -620,31 +621,31 @@ while(t < T)
         if(sourcesQuantity==1)
         hold on
         th = 0:pi/100:2*pi;
-        f = 1.5 * exp(1i*th) + 7+1i*5;
+        f = 2 * exp(1i*th) + 7+1i*5;
         plot(real(f), imag(f));
         end
         if(sourcesQuantity==2)
         hold on
         th = 0:pi/100:2*pi;
-        f = 1.5 * exp(1i*th) + 5+1i*5;
+        f = 2 * exp(1i*th) + 5+1i*5;
         plot(real(f), imag(f));
         end
         if(sourcesQuantity==3)
         hold on
         th = 0:pi/100:2*pi;
-        f = 1.5 * exp(1i*th) + 5+1i*5;
+        f = 2 * exp(1i*th) + 5+1i*5;
         plot(real(f), imag(f));
         end
         if(sourcesQuantity==4)
         hold on
         th = 0:pi/100:2*pi;
-        f = 1.5 * exp(1i*th) + 5+1i*5;
+        f = 2 * exp(1i*th) + 5+1i*5;
         plot(real(f), imag(f));
         end
         if(sourcesQuantity==5)
         hold on
         th = 0:pi/100:2*pi;
-        f = 1.5 * exp(1i*th) + 5+1i*5;
+        f = 2 * exp(1i*th) + 5+1i*5;
         plot(real(f), imag(f));
         end
     end

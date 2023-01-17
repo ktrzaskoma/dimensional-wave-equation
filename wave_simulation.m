@@ -470,16 +470,7 @@ amplitude = handles.AmplitudeMenu.String;
 amplitudeIndex = handles.AmplitudeMenu.Value;
 amp = str2double(amplitude{amplitudeIndex});
 
-%% max
-maxValue = handles.MaximumMenu.String;
-maxIndex = handles.MaximumMenu.Value;
-max = str2double(maxValue{maxIndex});
-
-%% min
-minValue = handles.MinimumMenu.String;
-minIndex = handles.MinimumMenu.Value;
-min = str2double(minValue{minIndex});
-
+%% pause
 pauseVal = get(handles.PauseSlider, 'Value');
 
 %% equation
@@ -611,7 +602,7 @@ while(t < T)
     end
     imagesc(handles.axe,x,y,wn);
     colorbar();
-    caxis([min max])
+    caxis([-0.1 0.1])
     colormap("parula")
     if(strcmp(typeOfObstacle,'Wall'))
     hold on

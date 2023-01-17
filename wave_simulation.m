@@ -501,14 +501,14 @@ while(t < T)
     % simulation
 
     %% Non reflecting walls 
-    wnp1(1,:) = wn(2,:) + ((CFL-1)/(CFL+1)) * (wnp1(2,:) - wn(1,:));
-    wnp1(end,:) = wn(end-1,:) + ((CFL-1)/(CFL+1)) * (wnp1(end-1,:) - wn(end,:));
-    wnp1(:,1) = wn(:,2) + ((CFL-1)/(CFL+1)) * (wnp1(:,2) - wn(:,1));
-    wnp1(:,end) = wn(:,end-1) + ((CFL-1)/(CFL+1)) * (wnp1(:,end-1) - wn(:,end));
+ %   wnp1(1,:) = wn(2,:) + ((CFL-1)/(CFL+1)) * (wnp1(2,:) - wn(1,:));
+  %  wnp1(end,:) = wn(end-1,:) + ((CFL-1)/(CFL+1)) * (wnp1(end-1,:) - wn(end,:));
+   % wnp1(:,1) = wn(:,2) + ((CFL-1)/(CFL+1)) * (wnp1(:,2) - wn(:,1));
+    %wnp1(:,end) = wn(:,end-1) + ((CFL-1)/(CFL+1)) * (wnp1(:,end-1) - wn(:,end));
 
     
-%     wn(:,[1 end]) = 0;
-%     wn([1 end],:) = 0;
+     wn(:,[1 end]) = 0;
+     wn([1 end],:) = 0;
 
     t = t + dt;
 

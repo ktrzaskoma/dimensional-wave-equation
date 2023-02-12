@@ -1,4 +1,4 @@
-# dimensional-wave-equation-2D
+# dimensional-wave-equation
 
 Examples that inspired us
 
